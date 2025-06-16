@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TN e-Services</title>
+  <link  rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      transition: font-size 0.3s;
+      text-align: center;
+    }
+
+    .one {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 200px;
+      padding: 10px;
+     overflow: hidden;
+	 background-color: #f1f1f1; 
+	 background: linear-gradient(to right, #04203e, #338cc2, #0a0f13);
+	 padding: 20px 10px;
+      flex-wrap: wrap;
+      color: white;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
+
+    .two {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .three {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .three button {
+      padding: 8px 16px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .four {
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .four img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .arrow {
+      position: absolute;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1;
+      width: 80px;
+      height: 60px;
+      padding-top: 10px;
+      color: white;
+      text-align: center;
+    }
+
+    .left-arrow {
+      left: 0;
+      top: 120px;
+    }
+
+    .right-arrow {
+      right: 0;
+      top: 120px;
+    }
+    .five{
+      position: relative;
+      width: 5px;
+      height: 20px;
+      background-color: white;
+    }
+
+    .arrow:hover {
+      background-color: rgba(127, 125, 125, 0.3);
+    }
+    #remove1:hover{
+      cursor: pointer;
+      color: black;
+    }
+    .six{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+    }
+    .six1{
+       width: 400px;
+       width: 200px;
+       padding: 40px 10px 40px 10px;
+      color: white;
+      border-radius: 30px;
+      margin: 10px;
+      transition: all 0.4s ease-in-out;
+      background-image: linear-gradient(to right bottom, #005aa7, #008cb7, #53b6b2, #b4dabb, #fffde4);
+    }
+    .six1 img{
+      height: 50px;
+      width: 50px;
+      margin-bottom: 10px;
+    }
+    .six1:hover{
+      cursor: pointer;
+      background: rgb(199, 199, 247);
+      transition: 2ms;
+      color: black;
+       transform: scale(1.02);
+       border-radius: 1px;
+  
+
+    }
+    .six1 span{
+      color: hsl(212, 82%, 40%);
+      font-weight: bold;
+    }
+    footer nav{
+      background-color: rgb(5, 5, 247);
+      margin-top: 50px;
+      padding: 20px;
+      color: white;
+      font-size: 0.9rem;
+      
+    
+    }
+    footer li,ul{
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      font-size: small;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    footer li:hover{
+     color: #00cfff;
+     cursor: pointer;
+    }
+
+    
+@media (max-width: 968px) {
+      .one {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+      }
+      .logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .arrow {
+        width: 50px;
+        font-size: 1.5rem;
+      }
+      
+    .four img {
+      height: 200px;
+      width: 100%;
+    }
+
+      .left-arrow, .right-arrow {
+        top: 80px;
+      }
+      .six1{
+        width:80%;
+        height:200px;
+
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="one">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" alt="Tamil Nadu Logo" />
+    
+    <div class="two">
+      <h1 id="title">Anytime / Anywhere e-Services</h1>
+      <p id="dept">Department of Survey and Settlement</p>
+      <p id="govt">Government of Tamil Nadu</p>
+    </div>
+
+    <div class="three">
+      <button onclick="skipToContent()" aria-lebel="Skip to main-content">Skip to main content</button>
+      <button onclick="about()">About this Portal</button>
+    
+      
+    </div>
+  </div>
+
+
+  <div class="four" id="main-content">
+    <p class="arrow left-arrow" onclick="prevImage()" aria-label="Previous Image">&#8249;</p>
+    <img src="image.jpg" id="change" alt="Slideshow Image" />
+    <p class="arrow right-arrow" onclick="nextImage()" aria-label="Next Image">&#8250;</p>
+  </div>
+  <div class="five">
+  
+  </div>
+  <div  id="rem" style="background-color: #f44336; padding: 20px 40px 20px 20px; margin: 0px 50px 10px 50px; text-align: justify; color: white; position: relative; ">
+    <p  id="remove1" style="position: absolute; right: 18px; top: 10px; font-weight: 500;"  onclick="remove()">x</p>
+    <p>It is informed that, all the extract that are generated in this portal are having names in Unicode Tamil font. Users are requested not to use the Translate Option available in the Browser as it may do the wrong translation and the translated extract may not reflect the correct names..</p>
+  </div>
+
+  <div>
+    <p style="text-align: justify; margin: 20px 50px 20px 50px; color: blue;">The information under this e-service is dynamically updated. Therefore, physical visit to any office of revenue Department is not required to obtain the information.
+Application for Patta transfer can be filed at any Common Service Centres(CSCs) across the state. A fee of Rs 60/- per application is charged at CSCs.
+Copies of Field Measurement Sketch (FMS) can be downloaded at free of cost under this e-service</p>
+  </div>
+
+  <div class="six">
+    <div class="six1" id="patta"  onclick="pattatransfer() "> <img src="REC.png"><p > online Patta Transfer </p></div>
+    <div class="six1" onclick="pattachittafmb()"> <img src="home.png" alt=""><p>View Patta/ Chitta /FMB- <span>(Rural/Natham)</span></p></div>
+    <div class="six1" onclick="register()">  <img src="3.png"><p>View A-Register Extract - <span>(Rural/Natham)</span></p></div>
+     <div class="six1" onclick="pattachitta()"> <img src="4.png " alt=""><p>Verify  Patta/ Chitta- <span>(Rural/Natham)</span></p></div>
+     <div class="six1" onclick="government()"> <img src="5.png" alt=""><p>Verify Government /Private (Poramboke) Land</p></div>
+     <div class="six1" onclick="fmb()"> <img src="6.png" alt=""><p>FMB Sketch - <span>(Rural/Natham)</span></p></div>
+     <div class="six1" onclick="pattaorder()"> <img src="7.png" alt=""><p>View Patta Order Copy</p></div>
+     <div class="six1" onclick="tslrextract()"> <img src="8.png" alt=""><p>TSLR Extract</p></div>
+     <div class="six1" onclick="tslrsketch()"> <img src="9.png" alt=""><p>TSLR Sketch -Urban</p></div>
+     <div class="six1" onclick="application()"> <img src="10.png" alt=""><p>Application Status</p></div>
+     <div class="six1" onclick="statement()"> <img src="9.png" alt=""><p>F-Line Skech / Statement</p></div>
+  </div>
+  <footer>
+    <div>
+      <nav>
+        <p style="margin-bottom: 10px;">© Government of Tamil Nadu</p>
+      <ul>
+        <li>Help</li>
+        <li>Web Administrator</li>
+        <li>Terms of Use</li>
+        <li>Contact Us</li>
+        <li>Disclaimer</li>
+        <li>Website Policy</li>
+        <li>Feedback</li>
+      </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const images = ["image.jpg", "image1.png", "image2.jpg"];
+    let current = 0;
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      document.getElementById('change').src = images[current];
+    }
+
+    function prevImage() {
+      current = (current - 1 + images.length) % images.length;
+      document.getElementById('change').src = images[current];
+    }
+
+    setInterval(() => {
+      nextImage();
+    }, 6000);
+
+
+    function skipToContent() {
+      document.getElementsByClassName('five')[0].scrollIntoView({ behavior: 'smooth' });
+    }
+    function remove(){
+      document.getElementById('rem').style.display="none";
+    }
+    function about(){
+      window.location.href="aboutthisportal.html";
+
+    }
+    function pattatransfer(){
+      window.open("https://tamilnilam.tn.gov.in/citizen/", "_blank");
+    }
+    function pattachittafmb(){
+      window.location.href="pattachittafmb.html";
+    }
+    function government(){
+      window.location.href="government land.html";
+    }
+
+    function register(){
+      window.location.href="a-register extract.html";
+    }
+    function pattachitta(){
+      window.location.href="view patta chitta.html";
+    }
+    function fmb(){
+     window.location.href="fmb.html";
+    }
+    function pattaorder(){
+      window.location.href="pattaorder copy.html";
+    }
+    function tslrextract(){
+      window.location.href="tslr extract.html";
+    }
+    function tslrsketch(){
+      window.location.href="tslr sketch.html";
+    }
+    function application(){
+      window.location.href="application status.html";
+    }
+    function statement(){
+     window.location.href="f-line skech.html";
+    }
+  </script>
+
+</body>
+</html>

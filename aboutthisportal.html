@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TN e-Services</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      transition: font-size 0.3s;
+    }
+
+    .one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: linear-gradient(to right, #04203e, #338cc2, #0a0f13);
+      flex-wrap: wrap;
+      color: white;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+    }
+
+    .two {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #homeBtn {
+      background-color: white;
+      color: #04203e;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #homeBtn:hover {
+      background-color: #e0e0e0;
+    }
+
+    .three {
+      background: linear-gradient(rgba(122, 183, 252, 0.8), rgba(247, 247, 250, 1));
+      padding: 40px 30px;
+      line-height: 1.8;
+    }
+
+    .three h1 {
+      margin-bottom: 10px;
+      color: #34495e;
+    }
+
+    .three hr {
+      border: 1px solid #34495e;
+      margin-bottom: 20px;
+    }
+
+    .three h3, .three h4 {
+      margin-top: 25px;
+      color: #1e3d59;
+    }
+
+    .three ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .three ul li {
+      list-style: disc;
+      margin-bottom: 8px;
+    }
+
+    .three a {
+      color: #0055aa;
+      text-decoration: none;
+    }
+
+    .three a:hover {
+      color: blue;
+    }
+
+    footer {
+      background-color: rgb(5, 5, 247);
+      color: white;
+      font-size: 0.9rem;
+      padding: 20px;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    footer li:hover {
+      color: #00cfff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .one {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-left {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #homeBtn {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="one" id="top">
+    <div class="header-left">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" alt="Tamil Nadu Logo" />
+      <div class="two">
+        <h1>Anytime / Anywhere e-Services</h1>
+        <p>Department of Survey and Settlement</p>
+        <p>Government of Tamil Nadu</p>
+      </div>
+    </div>
+    <button id="homeBtn" onclick="home()">Home</button>
+  </div>
+
+  
+  <div class="three">
+    <h1>About this Portal</h1>
+    <hr>
+    <p>This is one of the eServices offered by the Government of Tamil Nadu for the Citizens to view the information related to their Lands, Houses located in Tamil Nadu.</p>
+    
+    <h4>Citizens should know or have in hand to elicit information from the website:</h4>
+    <ul>
+      <li>Survey Number and Sub Division Number or Patta Number or Owner Name</li>
+      <li>Application ID to know the status of Online Patta Transfer</li>
+    </ul>
+
+    <h4>The Citizens can view the following information:</h4>
+
+    <h3>View Patta/Chitta Copy & A-Register Extract - Rural</h3>
+    <ul>
+      <li><a href="#">View Patta/Chitta</a></li>
+      <li><a href="#">A-Register Extract</a></li>
+      <li><a href="#">FMB Sketch</a></li>
+      <li><a href="#">View Patta Order Copy</a></li>
+      <li><a href="#">Application Status</a></li>
+    </ul>
+
+    <h3>View Patta/Chitta Copy & A-Register Extract - Urban</h3>
+    <ul>
+      <li><a href="#">TSLR Extract</a></li>
+      <li><a href="#">Application Status</a></li>
+    </ul>
+
+    <h3>Verify Web Issued Patta/Chitta Copy & A-Register Extract</h3>
+    <ul>
+      <li><a href="#">Verify Patta / Chitta</a></li>
+      <li><a href="#">Verify Government (Poramboke) / Private Land</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>© Government of Tamil Nadu</p>
+    <ul>
+      <li>Help</li>
+      <li>Web Administrator</li>
+      <li>Terms of Use</li>
+      <li>Contact Us</li>
+      <li>Disclaimer</li>
+      <li>Website Policy</li>
+      <li>Feedback</li>
+    </ul>
+  </footer>
+
+
+  <script>
+    function home() {
+    window.location.href="tn.html";
+  }
+
+  </script>
+
+</body>
+</html>

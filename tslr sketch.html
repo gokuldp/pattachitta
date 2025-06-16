@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TN e-Services</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: linear-gradient(to right, #04203e, #338cc2, #0a0f13);
+      color: white;
+      flex-wrap: wrap;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+    }
+    #homeBtn {
+      background-color: white;
+      color: #04203e;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .three {
+      border-radius: 20px;
+      border: 1px black solid;
+      background: linear-gradient(rgb(153, 216, 242), rgb(255, 255, 255));
+      padding: 30px;
+      margin: 0px 40px;
+    }
+    #surveyDetails, #pattaDetails {
+      display: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: rgb(5, 5, 247);
+      color: white;
+      font-size: 0.9rem;
+      padding: 20px;
+      text-align: center;
+      margin-top: 120px;
+    }
+    footer ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-left: 0;
+    }
+    footer li:hover {
+      color: #00cfff;
+      cursor: pointer;
+    }
+     @media (max-width: 968px) {
+      .one {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+         text-align: center;
+      }
+    
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid one">
+  <div class="d-flex flex-wrap align-items-center gap-3">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" alt="Tamil Nadu Logo" />
+    <div>
+      <h1 class="h4">Anytime / Anywhere e-Services</h1>
+      <p class="mb-0">Department of Survey and Settlement</p>
+      <p class="mb-0">Government of Tamil Nadu</p>
+    </div>
+  </div>
+  <button id="homeBtn" onclick="home()">Home</button>
+</div>
+
+<p class="text-white text-center fw-bold mt-4 py-2" style="background: linear-gradient(to right, #04203e, #338cc2, #0a0f13); margin: 30px;">
+  Land Records - View TSLR Sketch
+</p>
+
+<div class="three">
+  <form>
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="district">District:</label>
+        <select id="district" class="form-select" onchange="populateTalukAndVillage()">
+          <option value="">-- Select District --</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="taluk">Taluk:</label>
+        <select id="taluk" class="form-select">
+          <option value="">-- Select Taluk --</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="village">Village:</label>
+        <select id="village" class="form-select">
+          <option value="">-- Select Village --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Select Search Type:</label>
+      <div class="d-flex align-items-center gap-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchBy" id="bySurvey" onchange="toggleSearchType()">
+          <label class="form-check-label" for="bySurvey">Survey Number</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchBy" id="byPatta" onchange="toggleSearchType()">
+          <label class="form-check-label" for="byPatta">Patta Number</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="surveyDetails">
+      <p><strong>Enter one of the Survey Number and Subdivision Number relating to above:</strong><br>
+        1. If Survey Number is <strong>24/2</strong>, enter <strong>24</strong> and <strong>2</strong>.<br>
+        2. If Survey Number is <strong>24</strong>, enter <strong>24</strong> and <strong>-</strong>.
+      </p>
+      <div class="mb-2">
+        <label>Survey Number:</label>
+        <input type="text" class="form-control" placeholder="Eg: 24">
+      </div>
+      <div>
+        <label>Subdivision Number:</label>
+        <input type="text" class="form-control" placeholder="Eg: 2 or -">
+      </div>
+    </div>
+
+    <div id="pattaDetails">
+      <label>Enter Patta Number:</label>
+      <input type="text" class="form-control" placeholder="Enter Patta Number">
+    </div>
+
+    <div class="mb-3 mt-3">
+     
+      <input type="tel" id="phone" class="form-control" placeholder="Enter phone number">
+    </div>
+    <button type="button"  class="btn btn-primary mb-2" onclick="sendOTP()">Get OTP</button>
+
+    <div id="otpSection" style="display:none;">
+      <label>Enter OTP:</label>
+      <input type="text" id="otp" class="form-control mb-2" />
+      <button type="button" class="btn btn-dark" onclick="verifyOTP()">Verify</button>
+    </div>
+  </form>
+</div>
+
+<footer>
+  <p>© Government of Tamil Nadu</p>
+  <ul class="d-flex flex-wrap justify-content-center">
+    <li>Help</li>
+    <li>Web Administrator</li>
+    <li>Terms of Use</li>
+    <li>Contact Us</li>
+    <li>Disclaimer</li>
+    <li>Website Policy</li>
+    <li>Feedback</li>
+  </ul>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const tnDistricts = ["Ariyalur", "Chengalpattu", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kallakurichi", "Kanchipuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Ranipet", "Salem", "Sivagangai", "Tenkasi", "Thanjavur", "Theni", "Thiruvallur", "Thiruvarur", "Thoothukudi", "Tiruchirapalli", "Tirunelveli", "Tirupathur", "Tiruppur", "Tiruvannamalai", "Vellore", "Viluppuram", "Virudhunagar"];
+  const dummyData = {
+    Chennai: {
+      taluks: ["Egmore", "Tondiarpet"],
+      villages: ["Mylapore", "Kodambakkam", "Triplicane"]
+    },
+    Coimbatore: {
+      taluks: ["Coimbatore North", "Sulur"],
+      villages: ["Peelamedu", "RS Puram", "Singanallur"]
+    },
+    Ariyalur: {
+      taluks: ["Ariyalur Taluk", "Sendurai Taluk"],
+      villages: ["Andimadam", "Jayankondam", "Keelapalur"]
+    }
+  };
+
+  tnDistricts.forEach(d => {
+    document.getElementById("district").innerHTML += `<option>${d}</option>`;
+  });
+
+  function populateTalukAndVillage() {
+    const district = document.getElementById("district").value;
+    const talukSelect = document.getElementById("taluk");
+    const villageSelect = document.getElementById("village");
+
+    talukSelect.innerHTML = '<option>-- Select Taluk --</option>';
+    villageSelect.innerHTML = '<option>-- Select Village --</option>';
+
+    if (dummyData[district]) {
+      dummyData[district].taluks.forEach(t => talukSelect.innerHTML += `<option>${t}</option>`);
+      dummyData[district].villages.forEach(v => villageSelect.innerHTML += `<option>${v}</option>`);
+    }
+  }
+
+  function toggleSearchType() {
+    const bySurvey = document.getElementById("bySurvey").checked;
+    document.getElementById("surveyDetails").style.display = bySurvey ? "block" : "none";
+    document.getElementById("pattaDetails").style.display = bySurvey ? "none" : "block";
+  }
+
+  function sendOTP() {
+    const phone = document.getElementById("phone").value;
+    if (!phone || phone.length !== 10 || !/^[0-9]{10}$/.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+    alert("OTP sent to " + phone);
+    document.getElementById("otpSection").style.display = "block";
+  }
+
+  function verifyOTP() {
+    const otp = document.getElementById("otp").value;
+    if (otp === "1234") {
+      alert("OTP Verified Successfully!");
+    } else {
+      alert("Incorrect OTP. Please try again.");
+    }
+  }
+
+  function home() {
+    window.location.href = "tn.html";
+  }
+</script>
+
+</body>
+</html>
