@@ -183,20 +183,45 @@
 
 <script>
   const tnDistricts = ["Ariyalur", "Chengalpattu", "Chennai", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kallakurichi", "Kanchipuram", "Kanyakumari", "Karur", "Krishnagiri", "Madurai", "Nagapattinam", "Namakkal", "Nilgiris", "Perambalur", "Pudukkottai", "Ramanathapuram", "Ranipet", "Salem", "Sivagangai", "Tenkasi", "Thanjavur", "Theni", "Thiruvallur", "Thiruvarur", "Thoothukudi", "Tiruchirapalli", "Tirunelveli", "Tirupathur", "Tiruppur", "Tiruvannamalai", "Vellore", "Viluppuram", "Virudhunagar"];
-  const dummyData = {
-    Chennai: {
-      taluks: ["Egmore", "Tondiarpet"],
-      villages: ["Mylapore", "Kodambakkam", "Triplicane"]
-    },
-    Coimbatore: {
-      taluks: ["Coimbatore North", "Sulur"],
-      villages: ["Peelamedu", "RS Puram", "Singanallur"]
-    },
-    Ariyalur: {
-      taluks: ["Ariyalur Taluk", "Sendurai Taluk"],
-      villages: ["Andimadam", "Jayankondam", "Keelapalur"]
-    }
-  };
+  const dummyData =  "Ariyalur": {"taluks": ["Ariyalur Taluk", "Sendurai Taluk"], "villages": ["Andimadam", "Jayankondam", "Keelapalur"]},
+      "Chengalpattu": {"taluks": ["Chengalpattu Taluk", "Tambaram Taluk"], "villages": ["Guduvanchery", "Pallavaram", "Chromepet"]},
+      "Chennai": {"taluks": ["Egmore", "Tondiarpet"], "villages": ["Mylapore", "Kodambakkam", "Triplicane"]},
+      "Coimbatore": {"taluks": ["Coimbatore North", "Sulur"], "villages": ["Peelamedu", "RS Puram", "Singanallur"]},
+      "Cuddalore": {"taluks": ["Cuddalore", "Chidambaram"], "villages": ["Panruti", "Kattumannarkoil", "Kurinjipadi"]},
+      "Dharmapuri": {"taluks": ["Dharmapuri", "Harur"], "villages": ["Nallampalli", "Palacode", "Pappireddipatti"]},
+      "Dindigul": {"taluks": ["Dindigul", "Palani"], "villages": ["Oddanchatram", "Natham", "Vedasandur"]},
+      "Erode": {"taluks": ["Erode", "Bhavani"], "villages": ["Modakurichi", "Kodumudi", "Gobichettipalayam"]},
+      "Kallakurichi": {"taluks": ["Kallakurichi", "Chinnasalem"], "villages": ["Ulundurpet", "Sankarapuram", "Tirukkoyilur"]},
+      "Kancheepuram": {"taluks": ["Kancheepuram", "Sriperumbudur"], "villages": ["Uthiramerur", "Walukku", "Oragadam"]},
+      "Karur": {"taluks": ["Karur", "Kulithalai"], "villages": ["Krishnarayapuram", "Aravakurichi", "Manmangalam"]},
+      "Krishnagiri": {"taluks": ["Krishnagiri", "Hosur"], "villages": ["Uthangarai", "Shoolagiri", "Kaveripattinam"]},
+      "Madurai": {"taluks": ["Madurai North", "Madurai South"], "villages": ["Melur", "Thirumangalam", "Usilampatti"]},
+      "Mayiladuthurai": {"taluks": ["Mayiladuthurai", "Sirkazhi"], "villages": ["Kuthalam", "Tharangambadi", "Vaitheeswarankoil"]},
+      "Nagapattinam": {"taluks": ["Nagapattinam", "Vedaranyam"], "villages": ["Kilvelur", "Thirumarugal", "Thalaignayiru"]},
+      "Namakkal": {"taluks": ["Namakkal", "Tiruchengode"], "villages": ["Kolli Hills", "Rasipuram", "Paramathi Velur"]},
+      "Nilgiris": {"taluks": ["Udhagamandalam", "Coonoor"], "villages": ["Kotagiri", "Gudalur", "Kundah"]},
+      "Perambalur": {"taluks": ["Perambalur"], "villages": ["Veppanthattai", "Alathur", "Kunnam"]},
+      "Pudukkottai": {"taluks": ["Pudukkottai", "Illuppur"], "villages": ["Aranthangi", "Karambakudi", "Kulathur"]},
+      "Ramanathapuram": {"taluks": ["Ramanathapuram", "Paramakudi"], "villages": ["Rameswaram", "Tiruvadanai", "Mudukulathur"]},
+      "Ranipet": {"taluks": ["Arakkonam", "Walajah"], "villages": ["Sholingur", "Arcot", "Kalavai"]},
+      "Salem": {"taluks": ["Salem", "Mettur"], "villages": ["Attur", "Gangavalli", "Edappadi"]},
+      "Sivaganga": {"taluks": ["Sivaganga", "Karaikudi"], "villages": ["Tirupathur", "Manamadurai", "Ilayangudi"]},
+      "Tenkasi": {"taluks": ["Tenkasi", "Sankarankovil"], "villages": ["Kadayanallur", "Alangulam", "Shencottai"]},
+      "Thanjavur": {"taluks": ["Thanjavur", "Pattukkottai"], "villages": ["Orathanadu", "Peravurani", "Kumbakonam"]},
+      "Theni": {"taluks": ["Theni", "Bodinayakanur"], "villages": ["Andipatti", "Cumbum", "Periyakulam"]},
+      "Thoothukudi": {"taluks": ["Thoothukudi", "Tiruchendur"], "villages": ["Kovilpatti", "Eral", "Srivaikuntam"]},
+      "Tiruchirappalli": {"taluks": ["Tiruchirappalli", "Lalgudi"], "villages": ["Manapparai", "Musiri", "Thuraiyur"]},
+      "Tirunelveli": {"taluks": ["Tirunelveli", "Ambasamudram"], "villages": ["Nanguneri", "Sankarankovil", "Radhapuram"]},
+      "Tirupathur": {"taluks": ["Tirupathur", "Vaniyambadi"], "villages": ["Natrampalli", "Jolarpet", "Ambur"]},
+      "Tiruppur": {"taluks": ["Tiruppur", "Avinashi"], "villages": ["Palladam", "Dharapuram", "Udumalaipettai"]},
+      "Tiruvallur": {"taluks": ["Tiruvallur", "Ponneri"], "villages": ["Gummidipoondi", "Avadi", "Uthukottai"]},
+      "Tiruvannamalai": {"taluks": ["Tiruvannamalai", "Polur"], "villages": ["Chengam", "Chetpet", "Kalasapakkam"]},
+      "Tiruvarur": {"taluks": ["Tiruvarur", "Mannargudi"], "villages": ["Needamangalam", "Nannilam", "Valangaiman"]},
+      "Vellore": {"taluks": ["Vellore", "Katpadi"], "villages": ["Gudiyattam", "Arcot", "Anaicut"]},
+      "Viluppuram": {"taluks": ["Viluppuram", "Gingee"], "villages": ["Tindivanam", "Kandachipuram", "Vikravandi"]},
+      "Virudhunagar": {"taluks": ["Virudhunagar", "Rajapalayam"], "villages": ["Sattur", "Aruppukkottai", "Srivilliputhur"]}
+    };
+  
 
   tnDistricts.forEach(d => {
     document.getElementById("district").innerHTML += `<option>${d}</option>`;
